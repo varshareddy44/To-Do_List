@@ -1,0 +1,148 @@
+:root {
+  --bg-color: #fff;
+  --text-color: #333;
+  --card-color: #f0f0f0;
+  --input-border: #ccc;
+  --button-bg: #4CAF50;
+  --delete-color: red;
+
+  --font-sans: 'Arial', sans-serif;
+  --font-serif: 'Georgia', serif;
+  --font-mono: 'Courier New', monospace;
+}
+
+[data-font="sans"] {
+  font-family: var(--font-sans);
+}
+[data-font="serif"] {
+  font-family: var(--font-serif);
+}
+[data-font="mono"] {
+  font-family: var(--font-mono);
+}
+
+[data-theme="dark"] {
+  --bg-color: #1e1e1e;
+  --text-color: #f0f0f0;
+  --card-color: #333;
+  --input-border: #555;
+  --button-bg: #4CAF50;
+  --delete-color: #ff5e5e;
+}
+[data-theme="blue"] {
+  --bg-color: #e3f2fd;
+  --text-color: #0d47a1;
+  --card-color: #bbdefb;
+}
+[data-theme="green"] {
+  --bg-color: #e8f5e9;
+  --text-color: #1b5e20;
+  --card-color: #c8e6c9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+  padding: 1rem;
+}
+
+.container {
+  background: var(--bg-color);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.theme-switch input {
+  display: none;
+}
+.theme-switch span {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.add-task {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.add-task button {
+  padding: 0.5rem 1rem;
+  background-color: var(--button-bg);
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.todo-list {
+  list-style-type: none;
+}
+
+.todo-list li {
+  background-color: var(--card-color);
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-list button {
+  background: none;
+  border: none;
+  color: var(--delete-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Theme customizer hover panel */
+.customizer {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+  opacity: 0.5;
+}
+.customizer:hover {
+  opacity: 1;
+}
+.customizer select {
+  margin: 0.25rem 0;
+}
